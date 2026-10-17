@@ -1,0 +1,37 @@
+name: Workout
+options:
+  bundleIdPrefix: com.jonas
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.0"
+targets:
+  Workout:
+    type: application
+    platform: iOS
+    sources:
+      - WorkoutApp.swift
+    entitlements:
+      path: Workout.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: Workout
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        NSHealthShareUsageDescription: Workout reads your step count to track your daily movement goal.
+        NSHealthUpdateUsageDescription: Workout does not write to Health.
+        LSApplicationQueriesSchemes: [sidestore, shortcuts]
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIRequiresFullScreen: true
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jonas.workout
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGNING_ALLOWED: "NO"
